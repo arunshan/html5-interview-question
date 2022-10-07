@@ -24,10 +24,10 @@ app.get('/search/:keyword', (req, res) => {
     res.json(matchMovieList);
   }, delay);
 
-  handleCancelledRequest(req, res, timerId);
+  handleCanceledRequest(req, res, timerId);
 });
 
-function handleCancelledRequest(req, res, timerId) {
+function handleCanceledRequest(req, res, timerId) {
   req.on('aborted', requestCancelled);
   req.on('close', requestCancelled);
 
